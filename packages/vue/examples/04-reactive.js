@@ -1,6 +1,5 @@
-const { isObject } = require("lodash")
 
-const iObject = val => val !== null && typeof val === 'object'
+const isObject = val => val !== null && typeof val === 'object'
 
 function reactive(obj) {
   if (!isObject(obj)) {
@@ -32,8 +31,12 @@ function reactive(obj) {
 }
 
 
+
 const state = reactive({
-  foo: 'foo'
+  foo: 'foo',
+  bar: {
+    a: 1
+  }
 })
 
 
@@ -43,4 +46,6 @@ state.dong = 'dong'
 
 delete state.dong
 
+
+state.bar.a = 10
 
