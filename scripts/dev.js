@@ -24,6 +24,7 @@ const formats = args.formats || args.f
 const sourceMap = args.sourcemap || args.s
 const commit = execa.sync('git', ['rev-parse', 'HEAD']).stdout.slice(0, 7)
 
+// rollup 打包
 execa(
   'rollup',
   [
